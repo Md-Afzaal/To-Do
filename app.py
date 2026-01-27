@@ -19,6 +19,10 @@ class Mytask(db.Model):
 
     def __repr__(self):
         return f"<Task {self.id}>"
+    
+with app.app_context():
+    db.create_all()
+    
 
 # Route setup
 @app.route("/", methods=["GET","POST"])
@@ -67,6 +71,4 @@ def edit(id:int):
 
 #run and debug
 if __name__ == "__main__":
-    with app.app_context():
-        db.create_all()
-    app.run(debug=True)
+   app.run(debug=True)
