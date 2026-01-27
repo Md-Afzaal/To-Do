@@ -66,7 +66,7 @@ def delete(id:int):
 # Edit an Item
 @app.route("/edit/<int:id>", methods=["GET","POST"])
 def edit(id:int):
-    edit_task = Mytask.query.get_or_404(id)
+    edit_task = Mytask.query.filter_by(id=id,user_id=session["user_id"]).first_or_404()
     if request.method == "POST":
         edit_task.content = request.form["content"]
         edit_task.completed = True if 'completed' in request.form else False
