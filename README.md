@@ -13,7 +13,7 @@ This project was created for learning Flask, templates, and basic database opera
 - Update tasks
 - Delete tasks
 - Mark tasks as completed
-- Data stored using SQLite
+- Data stored using SQLAlchemy
 
 ---
 
@@ -23,7 +23,7 @@ This project was created for learning Flask, templates, and basic database opera
 - Flask
 - HTML
 - CSS / SCSS
-- SQLite
+- SQLAlchemy
 
 ---
 
@@ -44,7 +44,7 @@ To-Do-Web-app/
 ├── templates/
 │   ├── base.html
 │   ├── index.html
-│   └── update.html
+│   └── edit.html
 └── README.md
 
 ````
