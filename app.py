@@ -1,4 +1,5 @@
-from flask import Flask, render_template, redirect, request
+from flask import Flask, render_template, redirect, request, session
+import uuid
 from flask_sqlalchemy import SQLAlchemy
 from flask_scss import Scss
 from datetime import datetime
@@ -6,6 +7,7 @@ from datetime import datetime
 #my app setup
 app = Flask(__name__)
 Scss(app)
+app.secret_key = "Abbadabbajhabba"
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
@@ -16,12 +18,19 @@ class Mytask(db.Model):
     content = db.Column(db.String(200), nullable=False)
     completed = db.Column(db.Boolean, default=False)
     started = db.Column(db.DateTime, default=datetime.utcnow)
+    user_id = db.Column(db.String(36), nullable=False)
 
     def __repr__(self):
         return f"<Task {self.id}>"
     
 with app.app_context():
     db.create_all()
+
+@app.before_request
+def make_session_permanent():
+    session.permanent = True
+    if "user_id" not in session:
+        session["user_id"] = str(uuid.uuid4())
     
 
 # Route setup
@@ -30,7 +39,7 @@ def index():
     # Add a task
     if request.method == "POST":
         current_task = request.form["content"]
-        new_task = Mytask(content=current_task)
+        new_task = Mytask(content=current_task,user_id=session["user_id"])
         try:
             db.session.add(new_task)
             db.session.commit()
@@ -40,13 +49,13 @@ def index():
             return f"Error adding task: {e}"
     # See all tasks
     else:
-        tasks = Mytask.query.order_by(Mytask.started).all()
+        tasks = Mytask.query.order_by(Mytask.started).filter_by(user_id=session["user_id"]).all()
         return render_template("index.html", tasks=tasks)
 
 # Delete an Item
 @app.route("/delete/<int:id>")
 def delete(id:int):
-    delete_task = Mytask.query.get_or_404(id)
+    delete_task = Mytask.query.filter_by(id=id,user_id=session["user_id"]).first_or_404()
     try:
         db.session.delete(delete_task)
         db.session.commit()
