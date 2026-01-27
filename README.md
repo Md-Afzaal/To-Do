@@ -1,31 +1,101 @@
-# 📝 To-Do Web App (Flask)
+# To-Do Web App (Flask)
 
-A simple **To-Do Web Application** built using **Flask**, **HTML**, **CSS (SCSS)**, and **SQLite**.  
-This app allows users to add, update, delete, and mark tasks as completed.
+A simple To-Do web application built using Flask.  
+Users can add, update, delete, and mark tasks as completed.
 
-Built as a learning project to understand Flask routing, templates, databases, and basic frontend styling.
+This project was created for learning Flask, templates, and basic database operations.
 
 ---
 
-## 🚀 Features
+## Features
 
-- Add new tasks
-- Update existing tasks
+- Add tasks
+- Update tasks
 - Delete tasks
 - Mark tasks as completed
-- Clean UI with SCSS-based styling
-- SQLite database for persistence
+- Data stored using SQLite
 
 ---
 
-## 🛠 Tech Stack
+## Tech Used
 
-- **Backend:** Flask (Python)
-- **Frontend:** HTML, CSS (SCSS)
-- **Database:** SQLite
-- **Templating Engine:** Jinja2
+- Python
+- Flask
+- HTML
+- CSS / SCSS
+- SQLite
 
 ---
 
-## 📂 Project Structure
+## Project Structure
+
+```
+
+To-Do-Web-app/
+├── app.py
+├── requirements.txt
+├── instance/
+│   └── database.db
+├── static/
+│   ├── css/
+│   │   └── style.css
+│   └── scss/
+│       └── style.scss
+├── templates/
+│   ├── base.html
+│   ├── index.html
+│   └── update.html
+└── README.md
+
+````
+
+---
+
+## How to Run
+
+1. Clone the repository
+```bash
+git clone https://github.com/Mohd-Afzaal/To-Do-Web-app.git
+cd To-Do-Web-app
+````
+
+2. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Run the app
+
+```bash
+python app.py
+```
+
+4. Open browser and visit
+
+```
+http://127.0.0.1:5000/
+```
+
+---
+
+## SCSS Compilation
+
+SCSS must be compiled before styles work.
+
+```bash
+sass static/scss/style.scss static/css/style.css
+```
+
+For auto compile:
+
+```bash
+sass --watch static/scss:static/css
+```
+
+---
+
+## Author
+
+Mohd Afzaal
 
