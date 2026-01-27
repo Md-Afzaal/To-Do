@@ -1,0 +1,95 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #ecaf6b;
+  color: #3498db;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center; /* Horizontally centers the child div */
+  align-items: center; /* Vertically centers the child div */
+  min-height: 100vh; /* Ensures the container takes the full viewport height */
+  /* Optional: Remove default body margin */
+  margin: 0;
+}
+
+.content {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(18, 18, 18, 0.407);
+  text-align: center;
+}
+.content h1 {
+  color: #373894;
+}
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+.content table th,
+.content table td {
+  border: 1px solid #373894;
+  padding: 10px;
+  text-align: center;
+  color: #373894;
+}
+.content table th {
+  background-color: #373894;
+  color: rgb(255, 255, 255);
+}
+.content table tr:nth-child(even) {
+  background-color: rgb(245.8640718563, 216.5329341317, 183.8359281437);
+}
+.content a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 15px;
+  background-color: #3498db;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  border-radius: 50px;
+  transition: background-color 0.2s ease;
+}
+.content a:hover {
+  background-color: rgb(33.1380753138, 125.1882845188, 186.8619246862);
+}
+.content input {
+  padding: 10px;
+  border: 1px solid #373894;
+  border-radius: 5px;
+  margin: 5px;
+}
+.content #btn_add {
+  background-color: #28aa5e;
+  width: 30%;
+  color: rgb(255, 255, 255);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.content #btn_add:hover {
+  background-color: rgb(30.2857142857, 128.7142857143, 71.1714285714);
+}
+.content #btn_update {
+  background-color: #28aa5e;
+  width: 30%;
+  color: rgb(255, 255, 255);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.content #btn_update:hover {
+  background-color: rgb(30.2857142857, 128.7142857143, 71.1714285714);
+}
+.content #checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: #28aa5e;
+  cursor: pointer;
+}/*# sourceMappingURL=styles.css.map */
