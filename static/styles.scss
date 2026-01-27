@@ -1,0 +1,121 @@
+// colour variables
+$primary-color: #3498db;
+$secondary-color: #28aa5e;
+$accent-color: #e74c3c;
+$background-color: #ecaf6b;
+$text-color: #373894;
+$border-color: #373894;
+$hover-color: darken($primary-color, 10%);
+
+// typography
+$font-family-base: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+body {
+  font-family: $font-family-base;
+  background-color: $background-color;
+  color: $primary-color;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center; /* Horizontally centers the child div */
+  align-items: center; /* Vertically centers the child div */
+  min-height: 100vh; /* Ensures the container takes the full viewport height */
+  /* Optional: Remove default body margin */
+  margin: 0;
+}
+
+.content {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(18, 18, 18, 0.407);
+  text-align: center;
+
+  h1 {
+    color: $text-color;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+
+    th,
+    td {
+      border: 1px solid $border-color;
+      padding: 10px;
+      text-align: center;
+      color: $text-color;
+    }
+
+    th {
+      background-color: $text-color;
+      color: rgb(255, 255, 255);
+    }
+
+    tr:nth-child(even) {
+      background-color: lighten($background-color, 17%);
+    }
+  }
+
+  a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 15px;
+    background-color: $primary-color;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: $hover-color;
+    }
+  }
+
+  input {
+    padding: 10px;
+    // width: 50%;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    margin: 5px;
+  }
+
+  #btn_add {
+    background-color: $secondary-color;
+    width: 30%;
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: darken($secondary-color, 10%);
+    }
+  }
+
+  #btn_update {
+    background-color: $secondary-color;
+    width: 30%;
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: darken($secondary-color, 10%);
+    }
+  }
+
+  #checkbox {
+    width: 18px;
+    height: 18px;
+    accent-color: $secondary-color;
+    cursor: pointer;
+  }
+}
