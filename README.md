@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # To-Do Web App (Flask)
 
 A simple To-Do web application built using Flask.  
@@ -99,3 +100,6 @@ sass --watch static/scss:static/css
 
 Mohd Afzaal
 
+=======
+# To-Do
+>>>>>>> 88c454061486e01fa1e9762a605e574691686e8c
