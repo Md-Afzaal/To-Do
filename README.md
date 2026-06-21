@@ -56,8 +56,8 @@ To-Do-Web-app/
 
 1. Clone the repository
 ```bash
-git clone https://github.com/Mohd-Afzaal/To-Do-Web-app.git
-cd To-Do-Web-app
+git clone https://github.com/Md-Afzaal/To-Do.git
+cd To-Do
 ````
 
 2. Install dependencies
