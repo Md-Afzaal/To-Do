@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # To-Do Web App (Flask)
 
 A simple To-Do web application built using Flask.  
