@@ -101,5 +101,4 @@ sass --watch static/scss:static/css
 Mohd Afzaal
 
 =======
-# To-Do
->>>>>>> 88c454061486e01fa1e9762a605e574691686e8c
+
